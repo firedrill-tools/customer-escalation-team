@@ -28,3 +28,5 @@ The shared `CaseContext` carries the fixed case ID through SDK handoffs. Triage 
 The fixture has billing-only, account-only and mixed cases. All addresses and amounts are synthetic; no real billing or identity provider is called. Reset by copying the fixture over `workspace.json`. The JSON store is for sequential local runs rather than concurrent production cases.
 
 `uv run --extra test pytest` uses the Agents SDK's scripted model to execute real triage-to-specialist and specialist-to-specialist handoffs, tool calls, shared context and permission revocation. This verifies orchestration and local policy, not live model routing quality. Live OpenAI and new Firedrill integration proofs remain pending. This private repository has no license pending portfolio publication decisions.
+
+Explore related applications in the [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog). Product and setup references: [Firedrill](https://firedrill.run/) and the [official developer documentation](https://docs.firedrill.run/). Use documentation matching the qualified release; this repository records its current integration limits above.
