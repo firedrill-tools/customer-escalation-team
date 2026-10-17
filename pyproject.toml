@@ -3,7 +3,7 @@ name = "customer-escalation-team"
 version = "0.1.0"
 description = "OpenAI Agents SDK triage, billing and account specialist handoffs"
 requires-python = ">=3.12"
-dependencies = ["openai-agents==0.23.1"]
+dependencies = ["openai-agents==0.23.1", "openai==3.31.0", "httpx2==2.13.1", "pydantic==2.14.1"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<10"]
