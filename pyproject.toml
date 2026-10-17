@@ -10,6 +10,7 @@ test = ["pytest>=8,<10"]
 
 [project.scripts]
 escalation-team = "escalation_team.cli:main"
+escalation-team-state = "escalation_team.managed_cli:main"
 
 [build-system]
 requires = ["hatchling"]
