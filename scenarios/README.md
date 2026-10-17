@@ -1,10 +1,14 @@
-# Scenarios
+# Private customer escalation populations
 
-Reset the fixture for independent runs. Score the committed case, owner, handoff list and audit.
+Use escalation-team-cases list/init/inspect/reset. Private commands are model-free and create no runtime capability. Reset exclusively creates a separate root and preserves original source/effects/receipts.
 
-- **Billing route:** triage hands C-901 to billing. Billing checks the exact 4,500-cent charge and current revision before issuing one credit.
-- **Account route:** triage hands C-902 to account support. Only a verified, currently authorized unlock may succeed.
-- **Mixed case:** C-903 moves from triage to billing and then account support, preserving the same case ID and completing both actions.
-- **Permission revoked:** remove billing write permission after handoff but before the credit tool call. The tool must refuse the credit.
-- **Ownership or revision mismatch:** a specialist cannot perform another specialist's action, and an old revision cannot overwrite changed state.
-- **Read-only:** without `--allow-writes`, handoffs and reads work but all specialist writes are blocked.
+| Profile | Cases | Current work and meaningful history |
+| --- | --- | --- |
+| Starter | starter-billing, starter-account, starter-mixed | Original three cases, exact credit/unlock and real specialist-to-specialist transfer. |
+| Busy | busy-billing, busy-mixed, busy-prior |48cases/96human steps and audits; eight earlier credits/eight unlocks/revoked permissions. Four fresh billing, four mixed or four already-credited cases; no duplicate credit. |
+| Ambiguous | ambiguous-permission, ambiguous-identity, ambiguous-final | Genuine human update before/after specialist read, and incomplete final after a real credit. Technical completion and independently observed business state differ. |
+| Boundary | boundary-credit-cap, boundary-over-cap, boundary-revision | Exact5000cents, unsupported5001caller credit before model, last safe handoff then revision exhaustion before credit. |
+
+scripts/build_populations.py deterministically authors complete human histories through actual HumanWorkspace. Pinned fixtures preserve original bytes/history and honest unknown prior native model/authentication/real external effects. scripts/qualify_cases.py executes all12normal actual SDK cases (118owned Responses HTTP requests), every private CLI/control and separate preserving reset. HTTP protocol responses use actual public request/tool data; no model/client/provider object is substituted. Private expected outcomes and current-event injections remain outside model context.
+
+Historical business ownership is not a live SDK role or proof of permission. Explicit caller credit/unlock intent, separate write authorization and current scoped selected-case/role/read checks govern each action. Final model text cannot prove completion; incomplete final or cancellation can follow a real committed credit. No real billing/account system or paid model is called during these checks.

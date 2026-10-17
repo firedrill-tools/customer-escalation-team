@@ -118,8 +118,9 @@ def header(value, physical, instance_id=None):
         or value["kind"] != "managed_synthetic_escalation_source"
         or value["physical_identity"] != physical
         or value["provenance"] != PROVENANCE
-        or value["creation"] != "fixture"
-        or value["population"] is not None
+        or value["creation"] not in ("fixture", "population")
+        or value["creation"] == "fixture"
+        and value["population"] is not None
     ):
         raise ValueError(
             "original escalation source header identity/provenance differs"
@@ -135,6 +136,10 @@ def header(value, physical, instance_id=None):
         or sha256(raw) != value["fixture_sha256"]
     ):
         raise ValueError("original escalation fixture hash/encoding differs")
+    if value["creation"] == "population":
+        from .populations import baseline
+
+        return baseline(value["population"], raw)
     return parse(raw)["business"]
 
 
@@ -274,14 +279,20 @@ def snapshot(db, physical, instance_id=None):
     raw, table = {}, {}
     for name in SCHEMA:
         raw[name], table[name] = rows(db, name)
-    if (
-        [r[0] for r in table["metadata"]] != [1]
-        or [r[0] for r in table["business"]] != [1]
-        or table["seed_state"]
-    ):
+    if [r[0] for r in table["metadata"]] != [1] or [
+        r[0] for r in table["business"]
+    ] != [1]:
         raise ValueError("original escalation singleton/fixture seed differs")
     source = table["metadata"][0][1]
     current = header(source, physical, instance_id)
+    if source["creation"] == "population":
+        from .populations import validate_seed
+
+        if [r[0] for r in table["seed_state"]] != [1]:
+            raise ValueError("original case population seed required")
+        validate_seed(source, original_schema, raw, table["seed_state"][0][1])
+    elif table["seed_state"]:
+        raise ValueError("fixture cannot import population control")
     operations = {}
     for identity, value in table["operations"]:
         check_operation(value)

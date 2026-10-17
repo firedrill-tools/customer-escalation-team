@@ -1,0 +1,8 @@
+{
+  "cases": [
+    { "id": "C-901", "customer": "Maya Chen", "request": "Duplicate charge of 45.00 CAD", "verified": true, "charge_cents": 4500, "credit_issued": false, "account_locked": false, "billing_write": true, "account_write": false, "owner": "triage", "revision": 1, "handoffs": [] },
+    { "id": "C-902", "customer": "Noah Singh", "request": "Account locked after password reset", "verified": true, "charge_cents": 0, "credit_issued": false, "account_locked": true, "billing_write": false, "account_write": true, "owner": "triage", "revision": 1, "handoffs": [] },
+    { "id": "C-903", "customer": "Lina Ortiz", "request": "Duplicate charge and locked account", "verified": true, "charge_cents": 3500, "credit_issued": false, "account_locked": true, "billing_write": true, "account_write": true, "owner": "triage", "revision": 1, "handoffs": [] }
+  ],
+  "audit": []
+}
