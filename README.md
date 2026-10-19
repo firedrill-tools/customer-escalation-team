@@ -70,3 +70,7 @@ The distribution gate installs wheel, sdist and complete source outside checkout
 Live enabled provider/key/budget/semantic+billing review, new Firedrill persisted qualification, real billing/account integration and publication/license remain parked. This private repository has no selected public license.
 
 See the [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog), [Firedrill](https://firedrill.run/) and [official Firedrill documentation](https://docs.firedrill.run/). The [official OpenAI SDK guide](https://developers.openai.com/api/docs/guides/agents/sdk) and [handoff documentation](https://developers.openai.com/api/docs/guides/agents/orchestration) describe application-owned deployment/storage and SDK control transfer. Exact versions and observed original behavior are in PLAN.md.
+
+## Current Firedrill integration
+
+Released CLI/SDK 2.2.2, current command invocation, remote operator MCP and recovery are documented in [firedrill/README.md](firedrill/README.md). Offline checks preserve actual private-case/native-key behavior and separate caller intent. Authenticated persisted runs and live quality/cost remain separate parked gates.

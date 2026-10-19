@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "2026-10-14",
+  "name": "customer-escalation-team \u2014 actual managed native workflow",
+  "target": {
+    "kind": "command",
+    "argv": [
+      "node",
+      "firedrill/target.mjs"
+    ]
+  },
+  "scenarios": [
+    {
+      "id": "starter-billing",
+      "name": "starter-billing run",
+      "input": {
+        "caseId": "starter-billing",
+        "action": "run",
+        "task": "Inspect the exact current business source and explain the next steps without changing business state.",
+        "allowWrites": false,
+        "intent": null,
+        "recordId": "C-901",
+        "creditCents": null,
+        "unlock": false
+      }
+    },
+    {
+      "id": "ambiguous-permission",
+      "name": "ambiguous-permission run",
+      "input": {
+        "caseId": "ambiguous-permission",
+        "action": "run",
+        "task": "Inspect the exact current business source and explain the next steps without changing business state.",
+        "allowWrites": false,
+        "intent": null,
+        "recordId": "C-901",
+        "creditCents": null,
+        "unlock": false
+      }
+    },
+    {
+      "id": "busy-billing",
+      "name": "busy-billing inspect",
+      "input": {
+        "caseId": "busy-billing",
+        "action": "inspect",
+        "task": "Inspect the exact current business source and explain the next steps without changing business state.",
+        "allowWrites": false,
+        "intent": null,
+        "recordId": "C-1001",
+        "creditCents": null,
+        "unlock": false
+      }
+    }
+  ],
+  "repetitions": 1,
+  "concurrency": 1,
+  "limits": {
+    "timeoutMs": 240000,
+    "maxRuns": 3,
+    "maxOutputBytes": 4194304
+  }
+}
