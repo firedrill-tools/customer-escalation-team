@@ -1,6 +1,8 @@
-# Customer escalation team
+# Customer escalation team with OpenAI Agents SDK handoffs
 
 An actual OpenAI Agents SDK triage agent hands one synthetic support case to billing and account specialists. The application owns case identity, caller intent, role-specific reads and atomic state changes. Billing can issue one exact authorized credit; account support can perform an explicitly requested unlock. Current verification, permission, ownership and revision are checked at the action boundary.
+
+Simulate this OpenAI Agents SDK AI agent with [Firedrill](https://firedrill.run/), a simulation platform for AI agents. Start with the [Firedrill setup and simulation guide](firedrill/README.md); your coding agent can operate it while this application's runner stays in your repository or CI.
 
 ## Run locally
 
@@ -67,7 +69,7 @@ The suite covers original scripted SDK compatibility flows, complete source/mana
 
 The distribution gate installs wheel, sdist and complete source outside checkout using locked dependency hashes, in full development and production-only environments. Each installed run exercises all12cases and118real SDK HTTP requests, normal CLI completion/unfinished final/all3signals after a real credit, default pinned initialization and missing key before source. Complete full reruns the whole suite. Every source file byte/mode/hash is checked against the embedded manifest and repeatedly reproduced portable archive. Exact pushed Linux success and equality with its downloaded source artifact are required before independent completion is recorded in the catalog.
 
-Live enabled provider/key/budget/semantic+billing review, new Firedrill persisted qualification, real billing/account integration and publication/license remain parked. This private repository has no selected public license.
+Live enabled provider/key/budget/semantic+billing review, authenticated Firedrill persistence verification, real billing/account integration and publication/license remain parked. This private repository has no selected public license.
 
 See the [Firedrill example catalog](https://github.com/firedrill-tools/firedrill-example-catalog), [Firedrill](https://firedrill.run/) and [official Firedrill documentation](https://docs.firedrill.run/). The [official OpenAI SDK guide](https://developers.openai.com/api/docs/guides/agents/sdk) and [handoff documentation](https://developers.openai.com/api/docs/guides/agents/orchestration) describe application-owned deployment/storage and SDK control transfer. Exact versions and observed original behavior are in PLAN.md.
 
